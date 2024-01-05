@@ -11,9 +11,9 @@ while entryNumber1 > 0:
         numbersup_100 += 1
     if entryNumber1 <= 0:
         break
-print(sum) 
-print(dataNumber)
-print(numbersup_100)
+print(f'La somme des entrées: {sum}') 
+print(f'Le nombre de données entré: {dataNumber}')
+print(f'Le nombre de données supérieur à 100: {numbersup_100}')
     
     
 
