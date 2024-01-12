@@ -1,0 +1,6 @@
+Exercice 
+1- Ecrire un programme qui à partir de la saisir d'un rayon et d'une hauteur, calcule le volume d'un cône droit 
+2- L'utilisateur donne un entier positif et le programme annonce combien de fois de suites cet entier est divisible par 2 
+3- L'utilisateur donne un entier positif n et le programme affiche PAIR s'il est diviisible par 2 , IMPAIR
+ si non.
+ 4- Afficher un nombre aléatoire en 5 et 13
