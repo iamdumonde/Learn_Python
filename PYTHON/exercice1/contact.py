@@ -5,5 +5,5 @@ class Contact:
         self.numero = numero
         self.email = email
         
-    def affiche_info(self):
-        print(f"Nom: {self.nom}, Prénom: {self.prenom}, Numéro : {self.numero}, Email : {self.email}")
+    def __str__(self):
+        return f"Nom: {self.nom}, Prénom: {self.prenom}, Numéro : {self.numero}, Email : {self.email}"
