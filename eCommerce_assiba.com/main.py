@@ -29,6 +29,9 @@ def main():
             nom = input("Entrez le nom du produit à supprimer : ")
             bdd.supprimerProduit(nom)
             
+        elif makeChoice == '3':
+            bdd.afficheTousProduits()
+            
         
         elif makeChoice == "6":
             print("Au revoir !")
