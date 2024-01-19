@@ -132,16 +132,17 @@ class BaseDeDonnees:
         connection = self.getConnectedtodb()
         cursor = connection.cursor()
 
-        # Requête SQL pour supprimer un produit par son nom
-        affected_rows = cursor.execute("DELETE FROM Produits WHERE nom = %s", (produit_nom,))
-
-        if affected_rows == 0:
-            #aucune ligne n'a été affectée le produit n'existe pas
-            print(f"Le produit avec le nom '{produit_nom}' n'existe pas dans la base de donnée !")
-        else: 
-            # Validation de la transaction
+        cursor.execute("SELECT COUNT(*) FROM Produits WHERE nom = %s", (produit_nom,))
+        nombre_produits = cursor.fetchone()[0]
+        
+        if nombre_produits == 0:
+        # Aucun produit avec ce nom n'a été trouvé
+            print(f"Le produit avec le nom '{produit_nom}' n'existe pas dans la base de données.")
+        else:
+        # Le produit existe, procéder à la suppression
+            cursor.execute("DELETE FROM Produits WHERE nom = %s", (produit_nom,))
             connection.commit()
-            print(f"Le produit '{produit_nom}' successfull deleted !")
+            print(f"Le produit '{produit_nom}' a été supprimé avec succès !")
 
         # Fermeture du curseur et de la connexion
         cursor.close()
