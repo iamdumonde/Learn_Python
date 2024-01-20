@@ -1,10 +1,10 @@
-from produit import Produit
+from typing import Optional
 
 class Panier:
-    def __init__(self, quantity, total):
-        self.produits = []
+    def __init__(self, id:int, produit_id:int, quantity:int):
+        self.id = id
+        self.produit_id = produit_id
         self.quantity = quantity
-        self.total = total
         
     
     
@@ -12,8 +12,3 @@ class Panier:
     
     
     
-    
-    
-    
-
-# Panier : Une classe représentant le panier de l'utilisateur. Elle doit permettre d'ajouter des produits avec la quantité et de calculer le total.

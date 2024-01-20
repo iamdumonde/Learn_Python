@@ -1,6 +1,7 @@
 import mysql.connector
 from mysql.connector import errors
 from produit import Produit
+from panier import Panier
 
 class BaseDeDonnees:
     def __init__(self, host, user, password,database):
@@ -66,12 +67,14 @@ class BaseDeDonnees:
             )""")
         #
         cursor.execute("""CREATE TABLE IF NOT EXISTS Paniers (
+                id INT AUTO_INCREMENT PRIMARY KEY,
                 produit_id INT,
                 quantite INT,
                 FOREIGN KEY (produit_id) REFERENCES Produits(id)
             )""")
         #
         cursor.execute("""CREATE TABLE IF NOT EXISTS LigneFacture (
+                id INT AUTO_INCREMENT PRIMARY KEY,
                 panier_id INT,
                 produit_id INT,
                 quantite INT,
@@ -147,6 +150,28 @@ class BaseDeDonnees:
         # Fermeture du curseur et de la connexion
         cursor.close()
         connection.close()  
+    
+    #création du panier
+    def creerPanier(self, produit_id, quantity):
+        connection = self.getConnectedtodb()
+        cursor = connection.cursor()
+        
+        try:
+            #création d'un nouveau panier et récupération de l'id du panier
+            cursor.execute("INSERT INTO Paniers (produit_id, quantity) VALUES (%s, %s)", (produit_id, quantity))
+            panier_id = cursor.lastrowid
+            
+            connection.commit()
+            print(f"Panier créé avec ID {panier_id}")
+            return panier_id
+        except Exception as e:
+            print(f"Erreur lors de la création du panier : {e}")
+            
+        cursor.close()
+        connection.close()
+    #ajouter de produit au panier
+    def ajouterProduitauPanier(self):
+        pass
        
        
        

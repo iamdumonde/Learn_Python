@@ -4,6 +4,7 @@ from produit import Produit
 def main():
     #Instance de la base de donnée
     bdd = BaseDeDonnees('127.0.0.1', 'root', '', 'assiba_database')
+    bdd.getConnectedtodb()
     
     
     #Menu
@@ -12,9 +13,10 @@ def main():
         print("1. Créer un produit")
         print("2. Supprimer un produit")
         print("3. Afficher les produits disponibles")
-        print("4. Ajouter un produit au panier avec une quantité spécifiée")
-        print("5. Imprimer la facture en format CSV")
-        print("6. Quitter")
+        print("4. Créer un panier")
+        print("5. Ajouter un produit au panier avec une quantité spécifiée")
+        print("6. Imprimer la facture en format CSV")
+        print("7. Quitter")
         
         makeChoice = input("Que voulez-vous faire ?\nEntrez le numéro correspondant à votre choix : ")
         
@@ -32,8 +34,12 @@ def main():
         elif makeChoice == '3':
             bdd.afficheTousProduits()
             
+        elif makeChoice == '4':
+            panier_id = bdd.creerPanier()
+            print(f"Panier créé avec ID {panier_id}")
+            
         
-        elif makeChoice == "6":
+        elif makeChoice == "7":
             print("Au revoir !")
             break
         
