@@ -18,7 +18,7 @@ Vous devez créer une application de gestion de contacts en utilisant la program
      - Supprimer un contact
      - Quitter l'application
 
-- L'application doit permettre à l'utilisateur de saisir des données pour les contacts, de les afficher, de mettre à jour les informations d'un contact en utilisant son nom et prénom, et de supprimer un contact en utilisant son nom et prénom.
+- L'application doit permettre à l'utilisateur de saisir des données pour les contacts, de les afficher, de mettre à jour les informations d'un contact en utilisant son nom et prénom, et de supprimer un contact en utilisant son email.
 
 - Utilisez des classes Python pour représenter les contacts et les méthodes de gestion des contacts. Assurez-vous de traiter les erreurs potentielles, comme la recherche de contacts inexistants ou la gestion de la saisie utilisateur incorrecte.
 
