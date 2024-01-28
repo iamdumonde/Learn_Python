@@ -10,7 +10,7 @@ Vous devez créer une application de gestion de contacts en utilisant la program
 
 - Dans votre programme principal, importez le module contact_manager.py et utilisez la classe ContactManager pour créer une application de gestion de contacts.
 
-- Votre programme principal doit fournir un menu avec les options suivantes :
+- Votre programme principal doit fournir un main avec les méthodes :
 
      - Ajouter un nouveau contact
      - Afficher tous les contacts
@@ -18,11 +18,13 @@ Vous devez créer une application de gestion de contacts en utilisant la program
      - Supprimer un contact
      - Quitter l'application
 
-- L'application doit permettre à l'utilisateur de saisir des données pour les contacts, de les afficher, de mettre à jour les informations d'un contact en utilisant son nom et prénom, et de supprimer un contact en utilisant son email.
+- L'application doit permettre à l'utilisateur de saisir des données pour les contacts, de les afficher, de mettre à jour les informations d'un contact en utilisant son nom et prénom, et de supprimer un contact en utilisant son nom et prénom.
 
 - Utilisez des classes Python pour représenter les contacts et les méthodes de gestion des contacts. Assurez-vous de traiter les erreurs potentielles, comme la recherche de contacts inexistants ou la gestion de la saisie utilisateur incorrecte.
 
 - Assurez-vous d'utiliser la POO pour encapsuler les données et le comportement des contacts et pour organiser le code de manière propre et modulaire.
+
+- Stocker les contact crée dans un fichier txt qui vous servira de base de données.
 
 - Vous pouvez également inclure des fonctions utiles de conversion de types, telles que int(), str(), float(), et d'autres si nécessaire.
 
